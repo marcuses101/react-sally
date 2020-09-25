@@ -1,0 +1,28 @@
+body {
+
+}
+main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+section {
+    margin: 10px;
+    border: 3px solid black;
+    padding: 15px;
+}
+header {
+    height: 20vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: 
+    linear-gradient(hsla(0,50%,50%,0.2), hsla(50,50%,50%,0.5)),
+    url(https://ia.media-imdb.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_UX214_CR0,0,214,317_AL_.jpg);
+    background-size: 20vh, auto;
+}
+header h1 {
+    font-size: 45px;
+    font-weight: bolder;
+
+}

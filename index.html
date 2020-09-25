@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React hello World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Sally contact</title>
 </head>
 
 <body>
@@ -13,22 +15,68 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-        function App(props) {
-            console.log(props);
+
+        function Header(){
             return (
                 <header>
-                    My App
-                    {props.children}
+                    <h1 className="title">About me</h1>
                 </header>
             )
         }
 
+        function Main ({name}){
+            return (
+                <main>
+                    <section id="introduction">
+                        <p>Hi I'm {name}. I'm 25 and below this line you'll find more information about me.</p>
+                    </section>
+                    <section id="education">
+                        <p>I have studied at:</p>
+                        <ul>
+                            <li>IES BEZMILIANA</li>
+                            <li>Minnesota University</li>
+                        </ul>
+                    </section>
+                    <section id="works">
+                        <p>I have worked at:</p>
+                        <div>
+                            <ul>
+                                <li>Github as Engineer during 2018 and there I have to Lorem ipsum dolor sit amet, consectetur adipisicing elit. </li>
+                                <li>Jetbrains as Project manager during 2019 and I'm still working there. My work consist in
+                    A assumenda autem dolorem doloremque</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section id="Contact-section">
+                        <p>My contact information: </p>
+                        <Address name={name} />
+                    </section>
+                </main>
+            )
+        }
+
+        function Address({name}){
+            return (
+                <address>
+                    <p>My name is {name}.</p>
+                    <p>My email is: <a href="mailto://sally@IntenetExplorer.old">sally@IntenetExplorer.old</a></p>
+                    <p>My phone number is: <a href="tel:+34100572415">+34 100 57 24 15</a></p>
+                </address>
+            )
+        }
+
+        function App({name}) {
+            return (
+                <div>
+                    <Header />
+                    <Main name={name}/>
+                </div>
+            )
+        }
+
         ReactDOM.render(
-            <App className="my-class">
-                <div>Testing testing</div>
-                <h1>Current Page Title</h1>
-            </App>, document.getElementById("application-root")
-      ) 
+            <App name="Sally" />, document.getElementById("application-root")
+        )
 
     </script>
 </body>
